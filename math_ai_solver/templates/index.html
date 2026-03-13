@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Math AI Solver</title>
+</head>
+
+<body>
+
+<h1>Math AI Solver</h1>
+
+<form method="POST">
+<input name="expr" placeholder="Nhập bài toán">
+<button type="submit">Solve</button>
+</form>
+
+<h3>Kết quả:</h3>
+<p>{{ result }}</p>
+
+{% if graph %}
+<img src="{{ graph }}" width="400">
+{% endif %}
+
+<h3>Lịch sử</h3>
+<ul>
+{% for h in history %}
+<li>{{ h[0] }} = {{ h[1] }}</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
