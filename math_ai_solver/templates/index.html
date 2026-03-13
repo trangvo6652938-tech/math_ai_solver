@@ -1,33 +1,124 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Math AI Solver</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f2f2f2;
+text-align:center;
+padding:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+width:600px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.15);
+}
+
+input{
+width:350px;
+padding:10px;
+font-size:16px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+background:#4CAF50;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:5px;
+}
+
+button:hover{
+background:#45a049;
+}
+
+.result{
+margin-top:20px;
+font-size:18px;
+}
+
+.history{
+text-align:left;
+margin-top:30px;
+}
+
+.history ul{
+padding-left:20px;
+}
+
+img{
+margin-top:20px;
+border:1px solid #ddd;
+border-radius:5px;
+}
+
+</style>
+
 </head>
 
 <body>
 
+<div class="container">
+
 <h1>Math AI Solver</h1>
 
 <form method="POST">
-<input name="expr" placeholder="Nhập bài toán">
+
+<input 
+type="text"
+name="expression"
+placeholder="Ví dụ: solve x^2-4 hoặc plot x^2"
+required>
+
+<br><br>
+
 <button type="submit">Solve</button>
+
 </form>
 
-<h3>Kết quả:</h3>
+<div class="result">
+
+<h3>Kết quả</h3>
+
 <p>{{ result }}</p>
 
-{% if graph %}
-<img src="{{ graph }}" width="400">
-{% endif %}
-
-<h3>Kết quả:</h3>
-<p>{{ result }}</p>
+</div>
 
 {% if graph %}
-<h3>Đồ thị:</h3>
-<img src="{{ url_for('static', filename=graph) }}" width="500">
+
+<h3>Đồ thị</h3>
+
+<img src="{{ graph }}" width="450">
+
 {% endif %}
+
+<div class="history">
+
+<h3>Lịch sử</h3>
+
+<ul>
+
+{% for item in history %}
+
+<li>{{ item }}</li>
+
+{% endfor %}
+
 </ul>
+
+</div>
+
+</div>
 
 </body>
 </html>
