@@ -1,5 +1,4 @@
 flask
 sympy
-numpy
 matplotlib
-gunicorr
+numpy
