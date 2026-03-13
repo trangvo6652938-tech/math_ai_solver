@@ -1,4 +1,5 @@
 flask
 sympy
-matplotlib
 numpy
+matplotlib
+gunicorn
