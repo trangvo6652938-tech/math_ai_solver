@@ -20,11 +20,13 @@
 <img src="{{ graph }}" width="400">
 {% endif %}
 
-<h3>Lịch sử</h3>
-<ul>
-{% for h in history %}
-<li>{{ h[0] }} = {{ h[1] }}</li>
-{% endfor %}
+<h3>Kết quả:</h3>
+<p>{{ result }}</p>
+
+{% if graph %}
+<h3>Đồ thị:</h3>
+<img src="{{ url_for('static', filename=graph) }}" width="500">
+{% endif %}
 </ul>
 
 </body>
