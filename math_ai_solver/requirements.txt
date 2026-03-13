@@ -1,4 +1,4 @@
-flasl
+flask
 sympy
 numpy
 matplotlib
