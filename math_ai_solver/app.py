@@ -5,7 +5,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import os
-
+from flask import Flask
 app = Flask(__name__)
 
 x, y = sp.symbols('x y')
